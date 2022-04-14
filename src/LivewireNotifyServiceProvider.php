@@ -8,8 +8,6 @@ use Rivalex\LivewireNotify\Console\Commands\LivewireNotifyInstall;
 use Rivalex\LivewireNotify\Http\Livewire\Notify;
 use Rivalex\LivewireNotify\Http\Livewire\NotifyMessage;
 
-// use Illuminate\Support\Facades\Blade;
-
 class LivewireNotifyServiceProvider extends ServiceProvider
 {
     /**
@@ -23,8 +21,8 @@ class LivewireNotifyServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->bootForConsole();
         }
-        Livewire::component('notifier', Notify::class);
-        Livewire::component('notifier-message', NotifyMessage::class);
+        Livewire::component('notify', Notify::class);
+        Livewire::component('notify-message', NotifyMessage::class);
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'livewire-notify');
  
     }
@@ -37,11 +35,6 @@ class LivewireNotifyServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/livewire-notify.php', 'livewire-notify');
-
-        // Register the service the package provides.
-        // $this->app->singleton('livewire-notify', function ($app) {
-        //     return new LivewireNotifier;
-        // });
     }
 
     // /**

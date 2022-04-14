@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to `LaravelLivewirelivewire-notify` will be documented in this file.
+All notable changes to `Livewire-notify` will be documented in this file.
 
 ## 1.0.3 2021-13-04
 - **Changed** Readme update.

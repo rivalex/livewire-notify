@@ -42,7 +42,7 @@ class TestCase extends Orchestra
         ]);
 
         /*
-        include_once __DIR__.'/../database/migrations/create_livewire_notifier_table.php.stub';
+        include_once __DIR__.'/../database/migrations/create_livewire_notify_table.php.stub';
         (new \CreatePackageTable())->up();
         */
     }

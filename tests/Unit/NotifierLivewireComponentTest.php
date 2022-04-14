@@ -16,7 +16,7 @@ beforeEach(function(){
     ];
 });
 // it('accepts message argument', function () {
-//     livewire(Notifier::class)->set('message',$this->message)->assertSet('message',$this->message);
+//     livewire(Notify::class)->set('message',$this->message)->assertSet('message',$this->message);
 // });
 it('adds message to message bag received as an argument',function(){
     $livewire = livewire(Notify::class,['message'=>$this->message]);
@@ -28,11 +28,11 @@ it('adds message to message bag by calling addMsg action',function(){
     $this->assertEquals($this->messageFromMessageBag,$livewire->messages->pop());
 });
 it('grab message from session',function(){
-    session()->flash('notifier',$this->message);
+    session()->flash('notify',$this->message);
     $livewire = livewire(Notify::class);
     $this->assertCount(1,$livewire->messages);
 });
-it('reacts on "notifier" event',function(){
+it('reacts on "notify" event',function(){
     $this->message = [
         'text' => "Let's have fun!"
     ];
