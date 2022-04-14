@@ -2,7 +2,7 @@
 
 Contributions are welcome and will be fully credited.
 
-Contributions are accepted via Pull Requests on [Github](https://github.com/codespb/laravel-livewire-notifier).
+Contributions are accepted via Pull Requests on [Github](https://github.com/rivalex/laravel-livewire-notify).
 
 # Things you could do
 If you want to contribute but do not know where to start, this list provides some starting points.

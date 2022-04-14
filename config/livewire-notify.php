@@ -8,43 +8,43 @@ return [
             // 'msgClass'=>'bg-green-200',
             'msgClass'=>'bg-gradient-to-r from-green-200 to-green-300',
             'progressClass' => 'bg-green-500',
-            'icon' => 'livewire-notifier::icons.success',
+            'icon' => 'livewire-notify::icons.success',
         ],
         'error' => [
             // 'msgClass'=>'bg-red-200',
             'msgClass'=>'bg-gradient-to-r from-red-200 to-red-300',
             'progressClass' => 'bg-red-500',
-            'icon' => 'livewire-notifier::icons.error',
+            'icon' => 'livewire-notify::icons.error',
         ],
         'fail' => [
             // 'msgClass'=>'bg-red-200',
             'msgClass'=>'bg-gradient-to-r from-red-200 to-red-300',
             'progressClass' => 'bg-red-500',
-            'icon' => 'livewire-notifier::icons.error',
+            'icon' => 'livewire-notify::icons.error',
         ],
         'warning' => [
             // 'msgClass'=>'bg-yellow-200',
             'msgClass'=>'bg-gradient-to-r from-yellow-200 to-yellow-300',
             'progressClass' => 'bg-yellow-500',
-            'icon' => 'livewire-notifier::icons.error',
+            'icon' => 'livewire-notify::icons.error',
         ],
         'warn' => [
             // 'msgClass'=>'bg-yellow-200',
             'msgClass'=>'bg-gradient-to-r from-yellow-200 to-yellow-300',
             'progressClass' => 'bg-yellow-500',
-            'icon' => 'livewire-notifier::icons.error',
+            'icon' => 'livewire-notify::icons.error',
         ],
         'info' => [
             // 'msgClass'=>'bg-blue-200',
             'msgClass'=>'bg-gradient-to-r from-blue-200 to-blue-300',
             'progressClass' => 'bg-blue-500',
-            'icon' => 'livewire-notifier::icons.info',
+            'icon' => 'livewire-notify::icons.info',
         ],
         'default' => [
             // 'msgClass'=>'bg-gray-200',
             'msgClass'=>'bg-gradient-to-r from-gray-200 to-gray-300',
             'progressClass' => 'bg-gray-700',
-            'icon' => 'livewire-notifier::icons.info',
+            'icon' => 'livewire-notify::icons.info',
         ]
     ]
 ];

@@ -1,11 +1,11 @@
 <?php
 
-namespace CodeSPB\LivewireNotifier\Http\Livewire;
+namespace Rivalex\LivewireNotify\Http\Livewire;
 
-use Livewire\Component;
 use Illuminate\Support\Collection;
+use Livewire\Component;
 
-class NotifierMessage extends Component
+class NotifyMessage extends Component
 {
     /**
      * Message from attributes bag
@@ -34,10 +34,10 @@ class NotifierMessage extends Component
      * @return void
      */
     public function mount(){
-        $this->duration = $this->duration ?? config('livewire-notifier.duration');
-        $this->closable = $this->closable ?? config('livewire-notifier.closable');
-        $this->msgClass = $this->msgClass ?? config('livewire-notifier.types.' . ($this->message['type'] ?? 'default') . '.msgClass',config('livewire-notifier.types.default.msgClass'));
-        $this->progressClass = $this->progressClass ?? config('livewire-notifier.types.' . ($this->message['type'] ?? 'default') . '.progressClass',config('livewire-notifier.types.default.progressClass'));
+        $this->duration = $this->duration ?? config('livewire-notify.duration');
+        $this->closable = $this->closable ?? config('livewire-notify.closable');
+        $this->msgClass = $this->msgClass ?? config('livewire-notify.types.' . ($this->message['type'] ?? 'default') . '.msgClass',config('livewire-notify.types.default.msgClass'));
+        $this->progressClass = $this->progressClass ?? config('livewire-notify.types.' . ($this->message['type'] ?? 'default') . '.progressClass',config('livewire-notify.types.default.progressClass'));
     }
     
     public function render()
@@ -52,6 +52,6 @@ class NotifierMessage extends Component
             'progressClass' =>  $this->progressClass,
             'closable' => $this->closable,
         ], $this->message);
-        return view('livewire-notifier::livewire.notifier-message');
+        return view('livewire-notify::livewire.notify-message');
     }
 }

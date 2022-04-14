@@ -9,13 +9,13 @@
             setTimeout(()=>{
                 show=false;
                 },{{ $message['duration'] }}); @endif">
-      <div class="@if($message['closable']) cursor-pointer @endif flex flex-col select-none {{ $message['msgClass'] }} {{ config('livewire-notifier.defaultMsgClass')}} overflow-hidden">
+      <div class="@if($message['closable']) cursor-pointer @endif flex flex-col select-none {{ $message['msgClass'] }} {{ config('livewire-notify.defaultMsgClass')}} overflow-hidden">
           <div class="flex flex-row">
               <div class="flex flex-col items-center justify-center p-2">
                   @if ($message['icon'])
                       {!! $message['icon'] !!}
                   @else
-                       @include(config('livewire-notifier.types.'.$message['type'].'.icon'))
+                       @include(config('livewire-notify.types.'.$message['type'].'.icon'))
                   @endif
               </div>
               <div class="flex flex-col items-start justify-center p-2 select-none">

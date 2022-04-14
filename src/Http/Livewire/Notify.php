@@ -1,11 +1,11 @@
 <?php
 
-namespace CodeSPB\LivewireNotifier\Http\Livewire;
+namespace Rivalex\LivewireNotify\Http\Livewire;
 
-use Livewire\Component;
 use Illuminate\Support\Collection;
+use Livewire\Component;
 
-class Notifier extends Component
+class Notify extends Component
 {
     public $messages;
     
@@ -35,10 +35,10 @@ class Notifier extends Component
         $this->messages = collect($this->messages);
         $this->message && $this->addMsg($this->message);
         $this->reset('message');
-        if ($msg = session('notifier')) {
+        if ($msg = session('notify')) {
             $this->addMsg($msg);
         }
-        $this->duration = $this->duration ?? config('livewire-notifier.duration');
+        $this->duration = $this->duration ?? config('livewire-notify.duration');
     }
     /**
      * Add message to messages bag.
@@ -64,6 +64,6 @@ class Notifier extends Component
 
     public function render()
     {
-        return view('livewire-notifier::livewire.notifier');
+        return view('livewire-notify::livewire.notify');
     }
 }

@@ -10,7 +10,7 @@
 | need to change it using the "uses()" function to bind a different classes or traits.
 |
 */
-uses(CodeSPB\LivewireNotifier\Tests\TestCase::class)->in(__DIR__);
+uses(Rivalex\LivewireNotify\Tests\TestCase::class)->in(__DIR__);
 /*
 |--------------------------------------------------------------------------
 | Expectations

@@ -1,47 +1,52 @@
 {
-    "name": "codespb/livewire-notifier",
+    "name": "rivalex/livewire-notify",
     "description": "Simple Livewire notifications system without any dependencies except TALL-stack.",
     "license": "MIT",
-    "version": "1.0.3",
+    "version": "1.1.0",
     "authors": [
         {
             "name": "Dmitriy Belyaev",
             "email": "db@codespb.com",
             "homepage": "https://codespb.com"
+        },
+        {
+            "name": "Alessandro Rivolta",
+            "email": "info@rivalex.com",
+            "homepage": "https://rivalex.com"
         }
     ],
-    "homepage": "https://github.com/codespb/livewire-notifier",
-    "keywords": ["Laravel", "LivewireNotifier","Toast","Growl","Livewire"],
+    "homepage": "https://github.com/rivalex/livewire-notify",
+    "keywords": ["Laravel", "LivewireNotify","Toast","Growl","Livewire"],
     "require": {
-        "illuminate/support": "~7|~8"
+        "illuminate/support": "~7|~8|~9"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5",
         "orchestra/testbench": "^6.0",
-        "livewire/livewire": "^2.4",
-        "pestphp/pest": "^1.0",
-        "pestphp/pest-plugin-laravel": "^1.0",
+        "livewire/livewire": "^2.10",
+        "pestphp/pest": "^1.20",
+        "pestphp/pest-plugin-laravel": "^1.2",
         "pestphp/pest-plugin-livewire": "^1.0",
-        "orchestra/canvas": "^6.1",
-        "nunomaduro/collision": "^5.3"
+        "orchestra/canvas": "^7.0",
+        "nunomaduro/collision": "^6.2"
     },
     "autoload": {
         "psr-4": {
-            "CodeSPB\\LivewireNotifier\\": "src/"
+            "Rivalex\\LivewireNotify\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "CodeSPB\\LivewireNotifier\\Tests\\": "tests"
+            "Rivalex\\LivewireNotify\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "CodeSPB\\LivewireNotifier\\LivewireNotifierServiceProvider"
+                "LivewireNotifyServiceProvider"
             ],
             "aliases": {
-                "LivewireNotifier": "CodeSPB\\LivewireNotifier\\Facades\\LaravelLivewireNotifier"
+                "LivewireNotify": "Rivalex\\LivewireNotify\\Facades\\LaravelLivewireNotify"
             }
         }
     }

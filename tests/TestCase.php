@@ -1,11 +1,11 @@
 <?php
 
-namespace CodeSPB\LivewireNotifier\Tests;
+namespace Rivalex\LivewireNotify\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
-use CodeSPB\LivewireNotifier\LivewireNotifierServiceProvider;
-use Livewire\LivewireServiceProvider; 
+use Rivalex\LivewireNotify\LivewireNotifyServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -14,7 +14,7 @@ class TestCase extends Orchestra
         
         parent::setUp();
         // Factory::guessFactoryNamesUsing(
-        //     fn (string $modelName) => 'CodeSPB\\LivewireNotifier\\Database\\Factories\\'.class_basename($modelName).'Factory'
+        //     fn (string $modelName) => 'Rivalex\\LivewireNotify\\Database\\Factories\\'.class_basename($modelName).'Factory'
         // );
         // $this->viewsDirectory = __DIR__.'/views';
     }
@@ -22,7 +22,7 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
-            LivewireNotifierServiceProvider::class,
+            LivewireNotifyServiceProvider::class,
             LivewireServiceProvider::class
         ];
     }

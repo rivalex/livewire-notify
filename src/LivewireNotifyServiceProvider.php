@@ -1,15 +1,16 @@
 <?php
 
-namespace CodeSPB\LivewireNotifier;
+namespace Rivalex\LivewireNotify;
 
-use Livewire\Livewire;
-// use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
-use CodeSPB\LivewireNotifier\Http\Livewire\Notifier;
-use CodeSPB\LivewireNotifier\Http\Livewire\NotifierMessage;
-use CodeSPB\LivewireNotifier\Console\Commands\LivewireNotifierInstall;
+use Livewire\Livewire;
+use Rivalex\LivewireNotify\Console\Commands\LivewireNotifyInstall;
+use Rivalex\LivewireNotify\Http\Livewire\Notify;
+use Rivalex\LivewireNotify\Http\Livewire\NotifyMessage;
 
-class LivewireNotifierServiceProvider extends ServiceProvider
+// use Illuminate\Support\Facades\Blade;
+
+class LivewireNotifyServiceProvider extends ServiceProvider
 {
     /**
      * Perform post-registration booting of services.
@@ -22,9 +23,9 @@ class LivewireNotifierServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->bootForConsole();
         }
-        Livewire::component('notifier', Notifier::class);
-        Livewire::component('notifier-message', NotifierMessage::class);
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'livewire-notifier');
+        Livewire::component('notifier', Notify::class);
+        Livewire::component('notifier-message', NotifyMessage::class);
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'livewire-notify');
  
     }
     
@@ -35,10 +36,10 @@ class LivewireNotifierServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/livewire-notifier.php', 'livewire-notifier');
+        $this->mergeConfigFrom(__DIR__ . '/../config/livewire-notify.php', 'livewire-notify');
 
         // Register the service the package provides.
-        // $this->app->singleton('livewire-notifier', function ($app) {
+        // $this->app->singleton('livewire-notify', function ($app) {
         //     return new LivewireNotifier;
         // });
     }
@@ -50,7 +51,7 @@ class LivewireNotifierServiceProvider extends ServiceProvider
     //  */
     // public function provides()
     // {
-    //     return ['livewire-notifier'];
+    //     return ['livewire-notify'];
     // }
 
     /**
@@ -62,15 +63,15 @@ class LivewireNotifierServiceProvider extends ServiceProvider
     {
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__.'/../config/livewire-notifier.php' => config_path('livewire-notifier.php'),
-        ], 'livewire-notifier.config');
+            __DIR__ . '/../config/livewire-notify.php' => config_path('livewire-notify.php'),
+        ], 'livewire-notify.config');
 
         // Publishing the views.
         $this->publishes([
-            __DIR__.'/../resources/views' => base_path('resources/views/vendor/livewire-notifier'),
-        ], 'livewire-notifier.views');
+            __DIR__.'/../resources/views' => base_path('resources/views/vendor/livewire-notify'),
+        ], 'livewire-notify.views');
 
         // Registering package commands.
-        $this->commands([LivewireNotifierInstall::class]);
+        $this->commands([LivewireNotifyInstall::class]);
     }
 }
